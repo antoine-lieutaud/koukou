@@ -1,0 +1,13 @@
+<h1>Create your travel</h1>
+
+<%= simple_form_for [ @travel ] do |i| %>
+  <%= i.input :time_flight %>
+  <%= i.input :departure %>
+  <%= i.input :arrival %>
+  <%= i.input :price %>
+  <%= i.input :capacity %>
+  <%= i.submit "Create", class: "btn btn-primary" %>
+<% end %>
+<p>
+<%= link_to "Back", travels_path %>
+</p>

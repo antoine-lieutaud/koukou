@@ -1,0 +1,9 @@
+<h1>Your travels</h1>
+
+<ul>
+  <% @travels.each do |travel| %>
+    <li><%= "#{travel.departure} - #{travel.arrival} - #{travel.capacity}ppl"%></li>
+  <% end %>
+</ul>
+
+<%= link_to "create travel", new_travel_path %>
