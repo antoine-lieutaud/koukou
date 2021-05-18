@@ -14,7 +14,7 @@ class TravelPolicy < ApplicationPolicy
   end
 
   def create?
-    user.pilot
+    user&.pilot
   end
 
   def new?
@@ -22,7 +22,7 @@ class TravelPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == current_user
+    record.user == user
   end
 
   def edit?
@@ -30,6 +30,6 @@ class TravelPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.pilot
+    record.user == user
   end
 end
