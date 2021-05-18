@@ -1,9 +1,16 @@
-<h1>Your travels</h1>
+<h1>Travels</h1>
 
 <ul>
   <% @travels.each do |travel| %>
-    <li><%= link_to "#{travel.departure} - #{travel.arrival} - #{travel.capacity}ppl", travel_path(travel)%></li>
+    <li><%= link_to "#{travel.departure} - #{travel.arrival} - #{travel.capacity}ppl", travel_path(travel)%>
+    <% if current_user == travel.user %>
+      <%# <%= link_to "edit", travel_path %>
+      <%= link_to "delete", travel_path(travel),
+      method: :delete,
+      data: {confirm: "Are you sure?"} %></li>
+<% end %>
   <% end %>
 </ul>
-
-<%= link_to "create travel", new_travel_path %>
+<% if policy(Travel).new? %>
+  <%= link_to "create travel", new_travel_path %>
+<% end %>
