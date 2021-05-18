@@ -2,7 +2,7 @@
 
 <ul>
   <% @travels.each do |travel| %>
-    <li><%= "#{travel.departure} - #{travel.arrival} - #{travel.capacity}ppl"%></li>
+    <li><%= link_to "#{travel.departure} - #{travel.arrival} - #{travel.capacity}ppl", travel_path(travel)%></li>
   <% end %>
 </ul>
 
