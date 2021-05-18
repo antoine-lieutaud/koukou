@@ -1,6 +1,15 @@
 <h1>Edit</h1>
 
-
+<%= simple_form_for [ @travel ] do |i| %>
+  <%= i.input :time_flight, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 3,
+                              order: [:day, :month, :year] %>
+  <%= i.input :departure %>
+  <%= i.input :arrival %>
+  <%= i.input :price %>
+  <%= i.input :capacity %>
+  <%= i.submit "Update", class: "btn btn-primary" %>
+<% end %>
 
 <p>
   <%= link_to "Back", travels_path %>
