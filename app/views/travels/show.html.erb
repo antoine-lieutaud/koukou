@@ -10,6 +10,14 @@
 
 <% if @travel.total_bookings < @travel.capacity%>
 <%= link_to "Book", new_travel_booking_path(@travel) %> 
+
 <% else %>
 <%= link_to "Vol complet, retour à la liste", travels_path%> 
 <% end %>
+
+
+<div id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
