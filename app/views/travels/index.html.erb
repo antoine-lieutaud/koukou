@@ -8,9 +8,9 @@
       <%= link_to "delete", travel_path(travel),
       method: :delete,
       data: {confirm: "Are you sure?"} %></li>
-<% end %>
+    <% end %>
   <% end %>
 </ul>
-<% if policy(Travel).new? %>
-  <%= link_to "create travel", new_travel_path %>
-<% end %>
+<%# <% if policy(Travel).new? %> 
+  <%# <%= link_to "create travel", new_travel_path %>
+<%# <% end %>
