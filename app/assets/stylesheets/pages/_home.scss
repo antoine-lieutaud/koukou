@@ -1,0 +1,127 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CPoppins:700');
+/* Custom designs */
+@import url(components/banner.css);
+@import url(components/buttons.css);
+@import url(components/cards.css);
+@import url(components/container.css);
+@import url(components/footer.css);
+/* Utilities */
+body {
+  margin: 0;
+  font-family: Open Sans;
+}
+h2, h3, h4 {
+  font-family: Poppins;
+  text-align: center;
+}
+h1 {
+  font-family: Poppins;
+  text-align: center;
+  color: #455992;
+}
+a {
+  text-decoration: none;
+}
+.text-center {
+  text-align: center;
+}
+.footer {
+  text-align: center;
+  padding: 30px;
+  padding-bottom: 15px;
+  background-color: #354f53;
+}
+.footer a {
+  font-size: 30px;
+  color:  #36c3b8;
+}
+.footer p {
+  color: #ffffff;
+}
+.footer .fas {
+  color: #ffffff;
+}
+.container {
+  width: 900px;
+  margin: auto;
+}
+.card img {
+  width: 50px;
+  margin-bottom: 20px;
+}
+.card p {
+  opacity: .5;
+}
+.card {
+  width: 200px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
+  align-items: center;
+}
+.cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+  padding: 0 20%;
+}
+.btn-primary {
+  display: flex;
+  background-color: #65adce;
+  padding: 16px 36px;
+  border-radius: 50px;
+  color: white;
+  justify-content:center;
+}
+.container-btn{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 0 20%;
+}
+.btn-secondary {
+  display: flex;
+  border: 1px solid #52b5d3;
+  padding: 8px 16px;
+  border-radius: 50px;
+  color: #1EDD88;
+  margin-top: 90px;
+}
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  position: relative;
+  display: flex;
+}
+.banner h1 {
+  color: rgb(45, 76, 112);
+  font-size: 50px;
+  opacity: .99;
+}
+.banner h3 {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  opacity: .99;
+}
+.banner p {
+  color: white;
+  opacity: .7;
+  font-size: 15px;
+  text-align: center;
+}
+.home_video {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+  top: 0;
+  filter: brightness(80%);
+}
+.title_p {
+font-size: 50px;
+}

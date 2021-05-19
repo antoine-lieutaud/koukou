@@ -1,3 +1,60 @@
-
-
-<h1> KOUKOU! </h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>home</title>
+  <%# <%= cl_image_tag("animationKOOKOO_qsthgt")%>
+  <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+  <!-- We need this line below for responsiveness! -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- code a Hero / Banner section -->
+  <div class="banner" >
+  <%= video_tag "avion.mp4", autoplay: true, loop: true, muted: "muted", class: "home_video"%>
+    <div class="container">
+      <h1> KOUKOU! </h1>
+      <br>
+      <br>
+      <h3>avec <strong>KOUKOU</strong> on s'envoi en l'air !</h3>
+      <p>Voyagez à travers la France à bord d'avions privé</p>
+    </div>
+  <%# <p><%= image_tag "animationKOOKOO.gif"%></p> %>
+  </div>
+  <div class="container-btn">
+    <a class="btn-primary" href="http://localhost:3000/travels">find a flight</a>
+  </div>
+    <div>
+      <h2 class="text-center">About us</h2>
+    <div class="cards">
+      <div class="card">
+        <%= image_tag "info.png"%>
+        <h4>informations</h4>
+        <p>Toutes les informations sur les vols sont fournies par les pilotes</p>
+      </div>
+      <div class="card">
+        <%= image_tag "lamp.png"%>
+        <h4>commandant</h4>
+        <p>Tous nos vols sont proposés par des professionnels que nous avons nous-même sélectionné</p>
+      </div>
+      <div class="card">
+         <%= image_tag "airplane-flying.png"%>
+        <h4>Les vols</h4>
+        <p>Chaque vol est unique</p>
+      </div>
+    </div>
+  </div>
+  <!-- code a footer -->
+  <div class="footer">
+    <div class="links">
+      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+      <br>
+      <br>
+      <p>Avec KOUKOU, on s'<i class="fas fa-paper-plane"></i> en l'air.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -38,6 +38,11 @@ ActiveRecord::Schema.define(version: 2021_05_19_100243) do
     t.float "latitude"
     t.float "longitude"
     t.integer "total_bookings", default: 0
+    t.integer "total_bookings", default: 0
+    t.float "latitude"
+    t.float "longitude"
+    t.text "description"
+    t.string "title"
     t.index ["user_id"], name: "index_travels_on_user_id"
   end
 
