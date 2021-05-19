@@ -2,7 +2,7 @@
 
 <ul>
   <% @travels.each do |travel| %>
-    <li><%= link_to "#{travel.departure} - #{travel.arrival} - #{travel.capacity}ppl", travel_path(travel)%>
+    <li><%= link_to "#{travel.departure} - #{travel.arrival} - #{travel.capacity}ppl - #{travel.status}", travel_path(travel)%>
     <% if current_user == travel.user %>
       <%= link_to "edit", edit_travel_path(travel) %>
       <%= link_to "delete", travel_path(travel),

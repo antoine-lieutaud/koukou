@@ -1,7 +1,12 @@
 <h1>Booking form<h1>
 
 
+<%max_seat = @travel.capacity - @travel.total_bookings  %>
+
+<h3><%= "Il reste #{@travel.capacity - @travel.total_bookings} places disponible(s)"%> </h3>
 <%= simple_form_for [ @travel, @booking ] do |i| %>
-  <%= i.input :number_of_passengers %>
+  <%= i.input :number_of_passengers , :collection => (1..max_seat) %>
   <%= i.submit "Book", class: "btn btn-primary" %>
 <% end %>
+
+

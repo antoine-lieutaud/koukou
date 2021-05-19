@@ -23,7 +23,12 @@ class BookingsController < ApplicationController
     @booking.travel = @travel
     @booking.save!
     authorize @booking
-    redirect_to travels_path
+    redirect_to confirmation_path(@booking)
+  end
+
+  def confirmation
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   private
@@ -31,5 +36,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:number_of_passengers)
   end
-
 end
