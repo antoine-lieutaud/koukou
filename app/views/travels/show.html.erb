@@ -4,3 +4,5 @@
 <p><%= "Destination: #{@travel.arrival}" %></p>
 <p><%= "Price: #{@travel.price}€" %></p>
 <p><%= "Capacity: #{@travel.capacity}" %></p>
+
+<%= link_to "Book", new_travel_booking_path(@travel) %> 

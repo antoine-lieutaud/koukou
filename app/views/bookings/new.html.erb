@@ -1,0 +1,7 @@
+<h1>Booking form<h1>
+
+
+<%= simple_form_for [ @travel, @booking ] do |i| %>
+  <%= i.input :number_of_passengers %>
+  <%= i.submit "Book", class: "btn btn-primary" %>
+<% end %>
