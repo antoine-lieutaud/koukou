@@ -21,8 +21,12 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @travel = Travel.find(params[:travel_id])
     @booking.travel = @travel
+    begin
+      authorize @booking
+    rescue Pundit::NotAuthorizedError
+      flash[:alert] = "Désolé, quelqu'un vient de réserver la dernière place disponible"
+    end
     @booking.save!
-    authorize @booking
     redirect_to confirmation_path(@booking)
   end
 

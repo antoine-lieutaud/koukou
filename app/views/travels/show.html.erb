@@ -1,4 +1,17 @@
 
+<h1>My travel details</h1>
+<p><%= "Departure date: #{@travel.time_flight}" %></p>
+<p><%= "From: #{@travel.departure}" %></p>
+<p><%= "Destination: #{@travel.arrival}" %></p>
+<p><%= "Price: #{@travel.price}€" %></p>
+<p><%= "Capacity: #{@travel.capacity}" %></p>
+<p><%= "Description: #{@travel.description}" %></p>
+
+<% if @travel.photo.attached? %>
+<p><%= cl_image_tag @travel.photo.key, height: 300, width: 400, crop: :fill %></p>
+<% end %>
+
+
 <div class="parallax-window header-content" data-parallax="scroll" style="background-image: url(<%= image_url('Michel_avion.jpg') %>);">
   <h1>Vol Au dessus du Mont Saint-Michel</h1>
 </div>
