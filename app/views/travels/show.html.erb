@@ -5,6 +5,8 @@
 <p><%= "Price: #{@travel.price}€" %></p>
 <p><%= "Capacity: #{@travel.capacity}" %></p>
 <p><%= "Description: #{@travel.description}" %></p>
+<p></p>
+<p><%= cl_image_tag @travel.photo.key, height: 300, width: 400, crop: :fill %></p>
 
 
 <p><%= "#{@travel.total_bookings} places sur #{@travel.capacity} ont déjà été réservées"%> </p>
