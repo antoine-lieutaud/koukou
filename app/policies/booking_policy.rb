@@ -10,7 +10,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    record.travel.capacity - record.travel.total_bookings != 0
   end
 
   def new?

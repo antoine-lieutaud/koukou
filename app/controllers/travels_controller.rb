@@ -3,7 +3,16 @@ class TravelsController < ApplicationController
   before_action :set_travel, only: %i[edit update destroy]
 
   def index
-    @travels = policy_scope(Travel)
+    if params[:query].present?
+      sql_query = " \
+        travels.departure @@ :query \
+        OR travels.arrival @@ :query 
+      "
+      @travels = policy_scope(Travel).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @travels = policy_scope(Travel)
+    end
+    
     @markers = @travels.geocoded.map do |travel|
       {
         lat: travel.latitude,
@@ -15,10 +24,17 @@ class TravelsController < ApplicationController
   def show
     @travel = Travel.find(params[:id])
     authorize @travel
+    arrival = Geocoder.search(@travel.arrival).first.coordinates
+    departure = Geocoder.search(@travel.departure).first.coordinates
     @markers = [{
-      lat: @travel.latitude,
-      lng: @travel.longitude
-    }]
+          lat: arrival[0],
+          lng: arrival[1]
+      },
+      {
+        lat: departure[0],
+        lng: departure[1]
+      }
+    ]
   end
 
   def new
