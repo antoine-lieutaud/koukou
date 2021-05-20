@@ -1,0 +1,156 @@
+body {
+    background-color:rgb(245, 243, 243);
+    margin: 0;
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+i {
+    font-size: 50px;
+}
+
+.pilot-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  h2 {
+    margin-left: 20px;
+    font-size: 25px;
+    margin-top: 10px;
+    color: rgb(34, 34, 34) !important;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+  }
+}
+
+.header-content {
+    position: relative;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    padding: 150px;
+    margin-bottom: 68px;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+
+.header-content h1{
+ text-align: center;
+ margin: auto;
+ color: white;
+ font-family: 'Manrope', sans-serif;
+ }
+
+#paragraph-withmargin {
+    margin-bottom: 32px;
+}
+
+.pilot-pp {
+  width: 70px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px;
+  border: white 1px solid;
+  max-width: 100%;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.pilot-description {
+  padding: 20px;
+  background-color: white;
+  margin-top: 29px;
+  position: relative;
+  width: 75%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0 auto;
+  p {
+  padding: 0 70px;
+  padding-left: 90px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 200;
+  margin-bottom: 45px;
+  }
+
+}
+
+.pilot-name h2{
+  color: black;
+}
+
+.icons-show{
+  position: relative;
+  display: flex;
+  color: #354F53;
+  float: left;
+  margin: 10vh auto;
+  font-size: 20px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 550;
+  flex-wrap: wrap;
+}
+
+.far {
+  margin-left: 7px;
+  margin-right: 10px;
+  font-size: 30px;
+  }
+
+.fas {
+  margin-left: 60px;
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.bouton {
+  position: relative;
+  display: flex;
+  float: right;
+  right: 70px;
+}
+
+.btn-flat {
+  color: white;
+  padding: 16px 31px;
+  border-radius: 4px;
+  background: #498f80;
+  transition: background 0.3s ease;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.btn-flat:hover {
+  background: #354F53;
+  color: white;
+}
+//.calendar{
+//  color: #354F53;
+//  float: left;
+//}
+
+//.dep {
+//  float: left;
+//}
+
+//.arrival {
+//  float: left;
+
+//}
+
+//.price {
+//  float: left;
+
+//}
+
+//.seats {
+//}

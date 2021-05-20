@@ -1,26 +1,35 @@
-<h1>My travel details</h1>
-<p><%= "Departure date: #{@travel.time_flight}" %></p>
-<p><%= "From: #{@travel.departure}" %></p>
-<p><%= "Destination: #{@travel.arrival}" %></p>
-<p><%= "Price: #{@travel.price}€" %></p>
-<p><%= "Capacity: #{@travel.capacity}" %></p>
-<p><%= "Description: #{@travel.description}" %></p>
-<p></p>
-<p><%= cl_image_tag @travel.photo.key, height: 300, width: 400, crop: :fill %></p>
 
-
-<p><%= "#{@travel.total_bookings} places sur #{@travel.capacity} ont déjà été réservées"%> </p>
-
-<% if @travel.total_bookings < @travel.capacity%>
-<%= link_to "Book", new_travel_booking_path(@travel) %> 
-
-<% else %>
-<%= link_to "Vol complet, retour à la liste", travels_path%> 
-<% end %>
-
-
-<div id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="parallax-window header-content" data-parallax="scroll" style="background-image: url(<%= image_url('Michel_avion.jpg') %>);">
+  <h1>Vol Au dessus du Mont Saint-Michel</h1>
 </div>
+<div class="pilot-description">
+  <div class="pilot-info">
+    <%= image_tag "charles.jpeg", class: "pilot-pp" %>
+    <h2>Charles Choffel</h2>
+  </div>
+  <p><i class="descrip"></i><%= "#{@travel.description}" %></p>
+</div>
+<div style="display: flex; justify-content: center;">
+  <div class="icons-show">
+    <div class="calendar">
+      <p><i class="far fa-calendar-alt"></i><%= "#{@travel.time_flight}" %></p>
+    </div>
+    <div class="dep">
+      <p><i class="fas fa-plane-departure"></i><%= "#{@travel.departure}" %></p>
+    </div>
+    <div class="arrival">
+      <p><i class="fas fa-plane-arrival"></i><%= "#{@travel.arrival}" %></p>
+    </div>
+    <div class="price">
+      <p><i class="fas fa-tag"></i><%= "#{@travel.price}€" %></p>
+    </div>
+    <div class="seats">
+      <p><i class="fas fa-user-friends"></i><%= "#{@travel.capacity}" %></p>
+    </div>
+  </div>
+</div>
+  <div class=bouton>
+  <p><%= "#{@travel.time_flight}" %></p>
+  <a class="btn btn-flat" href="#">Book now</a>
+  </div>
+
