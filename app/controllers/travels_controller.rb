@@ -4,11 +4,21 @@ class TravelsController < ApplicationController
 
   def index
     @travels = policy_scope(Travel)
+    @markers = @travels.geocoded.map do |travel|
+      {
+        lat: travel.latitude,
+        lng: travel.longitude
+      }
+    end
   end
 
   def show
     @travel = Travel.find(params[:id])
     authorize @travel
+    @markers = [{
+        lat: @travel.latitude,
+        lng: @travel.longitude
+    }]
   end
 
   def new
@@ -50,6 +60,7 @@ class TravelsController < ApplicationController
   end
 
   def travel_params
-    params.require(:travel).permit(:time_flight, :departure, :arrival, :price, :capacity, :status)
+    params.require(:travel).permit(:time_flight, :departure, :arrival, :price, :capacity, :status, :description)
   end
+
 end
