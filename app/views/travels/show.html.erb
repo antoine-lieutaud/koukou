@@ -35,6 +35,6 @@
 </div>
   <div class=bouton>
   <p><%= "#{@travel.time_flight}" %></p>
-  <a class="btn btn-flat" href="#">Book now</a>
+<%= link_to "Book Now!", new_travel_booking_path(@travel), class: "btn btn-flat" %>
   </div>
 
