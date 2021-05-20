@@ -60,7 +60,7 @@ class TravelsController < ApplicationController
   end
 
   def travel_params
-    params.require(:travel).permit(:time_flight, :departure, :arrival, :price, :capacity, :status, :description)
+    params.require(:travel).permit(:time_flight, :departure, :arrival, :price, :capacity, :status, :description, :photo)
   end
 
 end
