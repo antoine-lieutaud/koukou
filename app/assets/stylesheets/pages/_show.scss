@@ -37,9 +37,13 @@ i {
     background-position: center;
     padding: 150px;
     margin-bottom: 68px;
-
-
 }
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
 
 .header-content h1{
  text-align: center;
