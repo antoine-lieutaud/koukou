@@ -15,10 +15,17 @@ class TravelsController < ApplicationController
   def show
     @travel = Travel.find(params[:id])
     authorize @travel
+    arrival = Geocoder.search(@travel.arrival).first.coordinates
+    departure = Geocoder.search(@travel.departure).first.coordinates
     @markers = [{
-        lat: @travel.latitude,
-        lng: @travel.longitude
-    }]
+          lat: arrival[0],
+          lng: arrival[1]
+      },
+      {
+        lat: departure[0],
+        lng: departure[1]
+      }
+    ]
   end
 
   def new
@@ -60,7 +67,7 @@ class TravelsController < ApplicationController
   end
 
   def travel_params
-    params.require(:travel).permit(:time_flight, :departure, :arrival, :price, :capacity, :status, :description)
+    params.require(:travel).permit(:time_flight, :departure, :arrival, :price, :capacity, :status, :description, :photo)
   end
 
 end
