@@ -1,5 +1,12 @@
 <h1>Travels</h1>
-
+<%= form_tag travels_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a travel"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 <ul>
   <% @travels.each do |travel| %>
     <li><%= link_to "#{travel.departure} - #{travel.arrival} - #{travel.capacity}ppl - #{travel.status}", travel_path(travel)%>

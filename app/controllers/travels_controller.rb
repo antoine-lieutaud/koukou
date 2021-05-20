@@ -3,7 +3,16 @@ class TravelsController < ApplicationController
   before_action :set_travel, only: %i[edit update destroy]
 
   def index
-    @travels = policy_scope(Travel)
+    if params[:query].present?
+      sql_query = " \
+        travels.departure @@ :query \
+        OR travels.arrival @@ :query 
+      "
+      @travels = policy_scope(Travel).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @travels = policy_scope(Travel)
+    end
+    
     @markers = @travels.geocoded.map do |travel|
       {
         lat: travel.latitude,
