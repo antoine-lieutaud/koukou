@@ -12,10 +12,10 @@
 <p><%= "#{@travel.total_bookings} places sur #{@travel.capacity} ont déjà été réservées"%> </p>
 
 <% if @travel.total_bookings < @travel.capacity%>
-<%= link_to "Book", new_travel_booking_path(@travel) %> 
+<%= link_to "Book", new_travel_booking_path(@travel) %>
 
 <% else %>
-<%= link_to "Vol complet, retour à la liste", travels_path%> 
+<%= link_to "Vol complet, retour à la liste", travels_path%>
 <% end %>
 
 

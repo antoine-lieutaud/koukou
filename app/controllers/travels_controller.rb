@@ -1,5 +1,5 @@
 class TravelsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i(index show)
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_travel, only: %i[edit update destroy]
 
   def index
@@ -16,8 +16,8 @@ class TravelsController < ApplicationController
     @travel = Travel.find(params[:id])
     authorize @travel
     @markers = [{
-        lat: @travel.latitude,
-        lng: @travel.longitude
+      lat: @travel.latitude,
+      lng: @travel.longitude
     }]
   end
 

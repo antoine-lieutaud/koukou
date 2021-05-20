@@ -1,22 +1,33 @@
 <h1>Travels</h1>
-
-<ul>
-  <% @travels.each do |travel| %>
-    <li><%= link_to "#{travel.departure} - #{travel.arrival} - #{travel.capacity}ppl - #{travel.status}", travel_path(travel)%>
-    <% if current_user == travel.user %>
-      <%= link_to "edit", edit_travel_path(travel) %>
-      <%= link_to "delete", travel_path(travel),
-      method: :delete,
-      data: {confirm: "Are you sure?"} %></li>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <% @travels.each do |travel| %>
+      <div class="col-3 py-2">
+        <% if travel.photo.attached? %>
+          <div class="view-card" style="background-image: url(<%= cl_image_path travel.photo.key %>)">
+        <% else %>
+          <div class="view-card" style="background-image: url('https://res.cloudinary.com/db1oldp7q/image/upload/v1621524617/default_tbamrn.jpg')">
+        <% end %>
+          <%= link_to "#{travel.departure} - #{travel.arrival}
+          #{travel.status}", travel_path(travel), class: "travel-info"%>
+          <br>
+            <i class="fas fa-user-friends ; font-size: 26px "></i>
+            <div class="ppl">
+              <%= link_to "#{travel.capacity}" %>
+            </div>
+        </div>
+      </div>
     <% end %>
-  <% end %>
-</ul>
-<%# <% if policy(Travel).new? %> 
+  </div>
+</div>
+<div id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+
+<%# <% if policy(Travel).new? %>
   <%# <%= link_to "create travel", new_travel_path %>
 <%# <% end %>
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
