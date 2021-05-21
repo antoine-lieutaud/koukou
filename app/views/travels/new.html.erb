@@ -1,4 +1,5 @@
-<h1>Create your travel</h1>
+<div class="form-container">
+<h1 class="form-h1">Create your travel</h1>
 
 <%= simple_form_for [ @travel ] do |i| %>
   <%= i.input :time_flight, as: :date, start_year: Date.today.year,
@@ -10,8 +11,9 @@
   <%= i.input :capacity %>
   <%= i.input :description %>
   <%= i.input :photo, as: :file %>
-  <%= i.submit "Create", class: "btn btn-primary" %>
+  <%= i.submit "Create", class:"btn-block", id:"travel-submit" %>
 <% end %>
 <p>
 <%= link_to "Back", travels_path %>
 </p>
+</div>

@@ -1,0 +1,25 @@
+.form-container {
+    width: 500px;
+    margin: 30px auto;
+}
+
+.form-h1 {
+    color: $koukou-color;
+    margin-bottom: 50px;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+#travel-submit {
+    border-radius: 5px;
+    border: none;
+    padding: 13px;
+    background-color : $koukou-color;
+    color: white;
+}
+
+#travel-submit:hover {
+    background-color: $koukou-hover;
+}
