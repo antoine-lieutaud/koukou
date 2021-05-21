@@ -9,12 +9,13 @@
   <div class="parallax-slider d-flex align-items-center justify-content-center">
       <%= cl_image_tag @travel.photo.key %>
   </div>
+
 </div>
 
 
 <div class="pilot-description">
   <div class="pilot-info">
-    <%= image_tag "charles.jpeg", class: "pilot-pp" %>
+    <%= image_tag asset_path("charles.jpg"), class: "pilot-pp" %>
     <h2>Charles Choffel</h2>
   </div>
   <p><i class="descrip"></i><%= "#{@travel.description}" %></p>
@@ -44,3 +45,4 @@
   </a>
   </div>
 
+<%= link_to "Back", travels_path, class:"btn btn-flat" %>

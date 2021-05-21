@@ -1,3 +1,4 @@
+
 import parallax from 'jquery-parallax.js';
 import $ from 'jquery';
 
@@ -6,3 +7,4 @@ const initparallax = () => {
 }
 
 export {initparallax}
+
