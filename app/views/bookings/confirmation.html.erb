@@ -1,3 +1,10 @@
-<h1><%= "Félicitations, votre réservation pour le Vol à destination de #{@booking.travel.arrival} est bien réservé" %></h1>
+<h3><%= "Félicitations, votre réservation pour le Vol à destination de #{@booking.travel.arrival} est bien réservé" %></h3>
+
+<h4>Les informations de votre réservation</h4>
+
+<p><%= "Date of Flight: #{@booking.travel.time_flight}" %></p>
+<p><%= "Départure: #{@booking.travel.departure}" %></p>
+<p><%= "Arrival: #{@booking.travel.arrival}" %></p>
+<p><%= "Number of passenger: #{@booking.number_of_passengers}" %></p>
 
 <%= link_to "Retours à la liste des vols", travels_path %>

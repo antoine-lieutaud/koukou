@@ -1,15 +1,21 @@
 <h1>My Informations</h1>
-  <h2></h2>
-<%= current_user.email %>
+  <%= current_user.first_name %>
+  <%= current_user.last_name %>
+  <%= current_user.email %>
 
-<h2>My travels</h2>
+<h3>My travels</h3>
 <ul>
+  
   <% @travels.each do |travel|%>
-    <li><%= " #{travel.departure} - #{travel.arrival} - #{travel.capacity}places - #{travel.status}" %></li>
+
+    <li><%= travel.departure %> - <%= travel.arrival %> - <%= travel.capacity %> places <%= travel.status %>
+    <%= link_to "Edit", edit_travel_path(travel) %>
+    <%= link_to "Delete", travel_path(travel), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
   <% end %>
 </ul>
 
-<h2>My bookings</h2>
+<h3>My bookings</h3>
 <ul>
   <% @bookings.each do |booking|%>
     <% travel = booking.travel %>
