@@ -1,5 +1,5 @@
 class TravelsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i(index show)
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_travel, only: %i[edit update destroy]
 
   def index
@@ -12,7 +12,7 @@ class TravelsController < ApplicationController
     else
       @travels = policy_scope(Travel)
     end
-    
+
     @markers = @travels.geocoded.map do |travel|
       {
         lat: travel.latitude,
@@ -27,8 +27,8 @@ class TravelsController < ApplicationController
     arrival = Geocoder.search(@travel.arrival).first.coordinates
     departure = Geocoder.search(@travel.departure).first.coordinates
     @markers = [{
-          lat: arrival[0],
-          lng: arrival[1]
+        lat: arrival[0],
+        lng: arrival[1]
       },
       {
         lat: departure[0],
@@ -65,7 +65,7 @@ class TravelsController < ApplicationController
   def destroy
     @travel = Travel.find(params[:id])
     @travel.destroy
-    redirect_to travels_path
+    redirect_to dashboard_path
   end
 
   private
