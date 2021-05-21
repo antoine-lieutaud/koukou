@@ -1,22 +1,12 @@
-body {
-    background-color:rgb(245, 243, 243);
-    margin: 0;
-}
 
-h1 {
-    color: white;
-    font-weight: bold;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 900;
-    font-size: 50px;
-}
 
-ul {
-    list-style: none;
-}
-
-i {
-    font-size: 50px;
+h5 {
+    color: white !important;
+    font-weight: bold !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 50px !important;
+    text-align: center;
 }
 
 .pilot-info {
@@ -46,7 +36,7 @@ i {
     margin-bottom: -78px;
     min-height: 450px;
     background: transparent;
-    h1 {
+    h5 {
       padding-top: 168px;
     }
 }
@@ -85,8 +75,10 @@ i {
   padding: 0 70px;
   padding-left: 90px;
   font-family: 'Manrope', sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   margin-bottom: 45px;
+  margin-top: 40px;
+  font-size: 17px;
   }
 
 }
@@ -102,48 +94,49 @@ i {
   float: left;
   margin: 10vh auto;
   font-size: 24px;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 800;
   flex-wrap: wrap;
+  p {
+    padding-bottom: 2px;
+  }
 }
 
 .far {
-  margin-left: 60px;
-  margin-right: 50px;
-  font-size: 30px;
+  margin-left: 71px;
+  margin-right: 59px;
   margin-top: 10px;
-  font-size: 65px;
+  font-size: 44px;
   }
 
 .fas {
   margin-left: 60px;
   margin-right: 50px;
-  font-size: 30px;
-  margin-top: 10px;
-  font-size: 65px;
+  margin-top: 41px;
+  font-size: 44px;
 }
 
 .bouton {
   position: relative;
   display: flex;
   float: right;
-  right: 70px;
+  right: 130px;
 }
 
 .btn-flat {
   color: white;
   padding: 16px 31px;
   border-radius: 4px;
-  background: #498f80;
+  background: #65adce;
   transition: background 0.3s ease;
   margin-top: 30px;
   margin-bottom: 50px;
+  margin-right: 20px;
 }
 
 .btn-flat:hover {
   background: #354F53;
   color: white;
 }
+
 //.calendar{
 //  color: #354F53;
 //  float: left;

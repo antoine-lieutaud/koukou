@@ -4,7 +4,7 @@
 <%# <p><%= cl_image_tag @travel.photo.key, height: 300, width: 400, crop: :fill %>
 <%# <% end %>
 <div class="parallax-window">
-    <h1>Vol Au dessus du Mont Saint-Michel</h1>
+    <h5><%= "#{@travel.departure.split(",").first}" %> - <%= "#{@travel.arrival.split(",").first}" %></h5>
 
   <div class="parallax-slider d-flex align-items-center justify-content-center">
       <%= cl_image_tag @travel.photo.key %>
@@ -26,7 +26,7 @@
     </div>
     <div class="dep">
       <p><i class="fas fa-plane-departure"></i><%= "#{@travel.departure}" %></p>
-    </div>
+      </div>
     <div class="arrival">
       <p><i class="fas fa-plane-arrival"></i><%= "#{@travel.arrival}" %></p>
     </div>
@@ -39,7 +39,8 @@
   </div>
 </div>
   <div class=bouton>
-  <p><%= "#{@travel.time_flight}" %></p>
-  <a class="btn btn-flat" href="<%= link_to "Book Now!", new_travel_booking_path(@travel), class: "btn btn-flat" %>">Book now</a>
+  <a>
+  <%= link_to 'Book Now!', new_travel_booking_path(@travel), class: "btn btn-flat" %>
+  </a>
   </div>
 
