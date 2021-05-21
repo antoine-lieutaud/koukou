@@ -15,8 +15,8 @@
 
 <div class="pilot-description">
   <div class="pilot-info">
-    <%= image_tag asset_path("charles.jpg"), class: "pilot-pp" %>
-    <h2>Charles Choffel</h2>
+    <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill %>
+    <h2><%= "yo" %> </h2>
   </div>
   <p><i class="descrip"></i><%= "#{@travel.description}" %></p>
 </div>
@@ -44,5 +44,8 @@
   <%= link_to 'Book Now!', new_travel_booking_path(@travel), class: "btn btn-flat" %>
   </a>
   </div>
-
+  <div class=bouton-back>
+<a>
 <%= link_to "Back", travels_path, class:"btn btn-flat" %>
+</a>
+</div>

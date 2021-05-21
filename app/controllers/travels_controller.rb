@@ -6,13 +6,13 @@ class TravelsController < ApplicationController
     if params[:query].present?
       sql_query = " \
         travels.departure @@ :query \
-        OR travels.arrival @@ :query 
+        OR travels.arrival @@ :query
       "
       @travels = policy_scope(Travel).where(sql_query, query: "%#{params[:query]}%")
     else
       @travels = policy_scope(Travel)
     end
-    
+
     @markers = @travels.geocoded.map do |travel|
       {
         lat: travel.latitude,
@@ -23,6 +23,7 @@ class TravelsController < ApplicationController
 
   def show
     @travel = Travel.find(params[:id])
+    @user = User.find(params[:user_id])
     authorize @travel
     arrival = Geocoder.search(@travel.arrival).first.coordinates
     departure = Geocoder.search(@travel.departure).first.coordinates

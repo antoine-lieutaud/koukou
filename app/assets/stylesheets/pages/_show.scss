@@ -1,5 +1,7 @@
 
-
+img {
+  width: 100%;
+}
 h5 {
     color: white !important;
     font-weight: bold !important;
@@ -68,7 +70,7 @@ h5 {
   background-color: white;
   margin-top: 29px;
   position: relative;
-  width: 75%;
+  width: 60%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 0 auto;
   p {
@@ -135,6 +137,10 @@ h5 {
 .btn-flat:hover {
   background: #354F53;
   color: white;
+}
+
+.bouton-back {
+  margin-left: 200px;
 }
 
 //.calendar{
