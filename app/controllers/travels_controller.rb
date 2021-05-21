@@ -23,7 +23,6 @@ class TravelsController < ApplicationController
 
   def show
     @travel = Travel.find(params[:id])
-    @user = User.find(params[:user_id])
     authorize @travel
     arrival = Geocoder.search(@travel.arrival).first.coordinates
     departure = Geocoder.search(@travel.departure).first.coordinates

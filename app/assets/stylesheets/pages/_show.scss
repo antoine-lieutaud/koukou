@@ -57,12 +57,14 @@ h5 {
 
 .pilot-pp {
   width: 70px;
+  height: 70px;
   border-radius: 50%;
   box-shadow: 0 1px 2px;
   border: white 1px solid;
   max-width: 100%;
   vertical-align: middle;
   box-sizing: border-box;
+  object-fit: cover;
 }
 
 .pilot-description {
@@ -95,7 +97,7 @@ h5 {
   color: #354F53;
   float: left;
   margin: 10vh auto;
-  font-size: 24px;
+  font-size: 23px;
   flex-wrap: wrap;
   p {
     padding-bottom: 2px;
