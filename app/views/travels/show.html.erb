@@ -7,7 +7,9 @@
     <h5><%= "#{@travel.departure.split(",").first}" %> - <%= "#{@travel.arrival.split(",").first}" %></h5>
 
   <div class="parallax-slider d-flex align-items-center justify-content-center">
+      <% if @travel.photo.attached? %>
       <%= cl_image_tag @travel.photo.key %>
+      <% end %>
   </div>
 
 </div>
@@ -42,7 +44,13 @@
   <div class=bouton>
   <a>
   <%= link_to 'Book Now!', new_travel_booking_path(@travel), class: "btn btn-flat" %>
+  <%= link_to "Back", travels_path, class:"btn btn-flat" %>
   </a>
   </div>
 
-<%= link_to "Back", travels_path, class:"btn btn-flat" %>
+  <div id="map-index"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
