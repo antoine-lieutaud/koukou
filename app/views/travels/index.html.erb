@@ -9,23 +9,17 @@
         <% else %>
           <div class="view-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/db1oldp7q/image/upload/v1621524617/default_tbamrn.jpg')">
         <% end %>
-<<<<<<< HEAD
-
-          <%= link_to "#{travel.departure.split(",").first} - #{travel.arrival.split(",").first}", travel_path(travel), class: "travel-info"%>
-
-          <br>
-
-          <i class="fas fa-user-friends ; font-size: 26px "></i>
-          <div class="ppl">
-            <%= "#{travel.capacity}" %>
-          </div>
+        <%= link_to "#{travel.departure.split(",").first} - #{travel.arrival.split(",").first}", travel_path(travel), class: "travel-info"%>
+        <br>
+        <i class="fas fa-user-friends ; font-size: 26px "></i>
+        <div class="ppl">
+          <%= "#{travel.capacity}" %>
+        </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
-
 <div id="map" class="map-index"
   style="width: 100%; height: 400px;"
   data-markers="<%= @markers.to_json %>"
