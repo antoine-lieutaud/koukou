@@ -2,22 +2,30 @@
 <br>
 <div class="container-fluid">
   <div class="row">
-    <% @travels.each do |travel| %>
-      <div class="col-3 py-2">
-        <% if travel.photo.attached? %>
-          <div class="view-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path travel.photo.key %>)">
-        <% else %>
-          <div class="view-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/db1oldp7q/image/upload/v1621524617/default_tbamrn.jpg')">
-        <% end %>
-        <%= link_to "#{travel.departure.split(",").first} - #{travel.arrival.split(",").first}", travel_path(travel), class: "travel-info"%>
-        <br>
-        <i class="fas fa-user-friends ; font-size: 26px "></i>
-        <div class="ppl">
-          <%= "#{travel.capacity}" %>
-        </div>
-        </div>
-      </div>
+    <%= form_tag travels_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a travel"
+    %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
+      <% @travels.each do |travel| %>
+        <div class="col-3 py-2">
+          <% if travel.photo.attached? %>
+            <div class="view-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path travel.photo.key %>)">
+          <% else %>
+            <div class="view-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/db1oldp7q/image/upload/v1621524617/default_tbamrn.jpg')">
+          <% end %>
+          <%= link_to "#{travel.departure.split(",").first} - #{travel.arrival.split(",").first}", travel_path(travel), class: "travel-info"%>
+          <br>
+          <i class="fas fa-user-friends ; font-size: 26px "></i>
+          <div class="ppl">
+            <%= "#{travel.capacity}" %>
+          </div>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>
 <div id="map" class="map-index"
