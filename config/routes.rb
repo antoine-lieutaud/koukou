@@ -10,6 +10,5 @@ Rails.application.routes.draw do
 
   get "bookings/:id/confirmation", to: "bookings#confirmation", as: :confirmation
   
-
-
+  get "dashboard", to: "dashboards#show", as: :dashboard
 end

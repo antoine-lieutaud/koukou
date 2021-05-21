@@ -30,7 +30,7 @@
 <% end %>
 <ul>
   <% @travels.each do |travel| %>
-    <li><%= link_to "#{travel.departure} - #{travel.arrival} - #{travel.capacity}ppl - #{travel.status}", travel_path(travel)%>
+    <li><%= link_to "#{travel.departure} - #{travel.arrival} - #{travel.capacity}places - #{travel.status}", travel_path(travel)%>
     <% if current_user == travel.user %>
       <%= link_to "edit", edit_travel_path(travel) %>
       <%= link_to "delete", travel_path(travel),
@@ -44,8 +44,3 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-
-
-<%# <% if policy(Travel).new? %>
-  <%# <%= link_to "create travel", new_travel_path %>
-<%# <% end %>
