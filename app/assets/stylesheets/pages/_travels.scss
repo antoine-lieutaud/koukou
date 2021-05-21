@@ -1,6 +1,5 @@
 .main-container {
   display: flex;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
@@ -10,8 +9,12 @@
   height: 100vh;
 }
 
+.index {
+  padding-top: 40px;
+}
 .view-cards .fas{
   color: rgb(81, 94, 136);
+  font-size: 20px;
 }
 .travel-info {
   font-size: 28px;
@@ -41,7 +44,7 @@
   align-items: center;
   display: inline-table;
   justify-content: space-around;
- height: 150px;
+  height: 150px;
 }
 
 .view-card a {
@@ -49,6 +52,7 @@ text-decoration: none;
 text-align: center;
 color: rgb(255, 255, 255);
 font-family: Poppins;
+font-size: 32px;
 }
 
 
@@ -70,9 +74,10 @@ color: rgb(30, 72, 92);
 }
 .view-card .fa-user-friends {
   position: absolute;
-  bottom: 20px;
-  left:25px;
+  bottom: 17px;
+  left:15px;
   color: rgb(255, 255, 255);
+  font-size: 20px;
 }
 .view-cards {
   flex-grow: 1;
