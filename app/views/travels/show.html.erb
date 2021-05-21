@@ -17,8 +17,8 @@
 
 <div class="pilot-description">
   <div class="pilot-info">
-    <%= image_tag asset_path("charles.jpg"), class: "pilot-pp" %>
-    <h2>Charles Choffel</h2>
+    <%= cl_image_tag @travel.user.photo.key, class: "pilot-pp" %>
+    <h2><%=@travel.user.first_name %> <%=@travel.user.last_name %> </h2>
   </div>
   <p><i class="descrip"></i><%= "#{@travel.description}" %></p>
 </div>

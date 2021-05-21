@@ -1,5 +1,7 @@
 
-
+img {
+  width: 100%;
+}
 h5 {
     color: white !important;
     font-weight: bold !important;
@@ -55,12 +57,14 @@ h5 {
 
 .pilot-pp {
   width: 70px;
+  height: 70px;
   border-radius: 50%;
   box-shadow: 0 1px 2px;
   border: white 1px solid;
   max-width: 100%;
   vertical-align: middle;
   box-sizing: border-box;
+  object-fit: cover;
 }
 
 .pilot-description {
@@ -68,7 +72,7 @@ h5 {
   background-color: white;
   margin-top: 29px;
   position: relative;
-  width: 75%;
+  width: 60%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 0 auto;
   p {
@@ -93,7 +97,7 @@ h5 {
   color: #354F53;
   float: left;
   margin: 10vh auto;
-  font-size: 24px;
+  font-size: 23px;
   flex-wrap: wrap;
   p {
     padding-bottom: 2px;
@@ -135,6 +139,10 @@ h5 {
 .btn-flat:hover {
   background: #354F53;
   color: white;
+}
+
+.bouton-back {
+  margin-left: 200px;
 }
 
 //.calendar{

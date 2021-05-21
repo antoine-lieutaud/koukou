@@ -6,7 +6,7 @@ class TravelsController < ApplicationController
     if params[:query].present?
       sql_query = " \
         travels.departure @@ :query \
-        OR travels.arrival @@ :query 
+        OR travels.arrival @@ :query
       "
       @travels = policy_scope(Travel).where(sql_query, query: "%#{params[:query]}%")
     else
