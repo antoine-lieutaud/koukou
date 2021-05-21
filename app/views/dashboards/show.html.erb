@@ -1,0 +1,19 @@
+<h1>My Informations</h1>
+  <h2></h2>
+<%= current_user.email %>
+
+<h2>My travels</h2>
+<ul>
+  <% @travels.each do |travel|%>
+    <li><%= " #{travel.departure} - #{travel.arrival} - #{travel.capacity}places - #{travel.status}" %></li>
+  <% end %>
+</ul>
+
+<h2>My bookings</h2>
+<ul>
+  <% @bookings.each do |booking|%>
+    <% travel = booking.travel %>
+    <li><%= travel.time_flight %> - <%= travel.departure %> - <%= travel.arrival %> - <%= booking.number_of_passengers %> places 
+    </li>
+  <% end %>
+</ul>
