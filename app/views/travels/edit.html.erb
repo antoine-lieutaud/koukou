@@ -1,4 +1,5 @@
-<h1>Edit</h1>
+<div class="form-container">
+<h1 form-h1>Edit</h1>
 
 <%= simple_form_for [ @travel ] do |i| %>
   <%= i.input :time_flight, as: :date, start_year: Date.today.year,
@@ -9,9 +10,15 @@
   <%= i.input :price %>
   <%= i.input :capacity %>
   <%= i.input :description %>
-  <%= i.submit "Update", class: "btn btn-primary" %>
+  <%= i.input :photo, as: :file %>
+  <% if @travel.photo.attached? %>
+  <%= cl_image_tag @travel.photo.key, height: 100, width: 100, crop: :fill %>
+  <% end %> 
+  <p></p>
+  <%= i.submit "Update", class:"btn btn-primary btn-block"  %>
 <% end %>
 
 <p>
   <%= link_to "Back", travels_path %>
 </p>
+</div>
