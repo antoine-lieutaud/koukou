@@ -1,4 +1,5 @@
 import places from 'places.js';
+
 const initAutocomplete = () => {
   const arrivalInput = document.getElementById('travel_arrival');
   if (arrivalInput) {

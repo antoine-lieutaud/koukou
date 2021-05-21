@@ -1,10 +1,21 @@
 
-<div class="parallax-window header-content" data-parallax="scroll" style="background-image: url(<%= image_url('Michel_avion.jpg') %>);">
-  <h1>Vol Au dessus du Mont Saint-Michel</h1>
+
+<%# <% if @travel.photo.attached? %>
+<%# <p><%= cl_image_tag @travel.photo.key, height: 300, width: 400, crop: :fill %>
+<%# <% end %>
+<div class="parallax-window">
+    <h5><%= "#{@travel.departure.split(",").first}" %> - <%= "#{@travel.arrival.split(",").first}" %></h5>
+
+  <div class="parallax-slider d-flex align-items-center justify-content-center">
+      <%= cl_image_tag @travel.photo.key %>
+  </div>
+
 </div>
+
+
 <div class="pilot-description">
   <div class="pilot-info">
-    <%= image_tag "charles.jpeg", class: "pilot-pp" %>
+    <%= image_tag asset_path("charles.jpg"), class: "pilot-pp" %>
     <h2>Charles Choffel</h2>
   </div>
   <p><i class="descrip"></i><%= "#{@travel.description}" %></p>
@@ -16,7 +27,7 @@
     </div>
     <div class="dep">
       <p><i class="fas fa-plane-departure"></i><%= "#{@travel.departure}" %></p>
-    </div>
+      </div>
     <div class="arrival">
       <p><i class="fas fa-plane-arrival"></i><%= "#{@travel.arrival}" %></p>
     </div>
@@ -29,7 +40,9 @@
   </div>
 </div>
   <div class=bouton>
-  <p><%= "#{@travel.time_flight}" %></p>
-  <a class="btn btn-flat" href="#">Book now</a>
+  <a>
+  <%= link_to 'Book Now!', new_travel_booking_path(@travel), class: "btn btn-flat" %>
+  </a>
   </div>
 
+<%= link_to "Back", travels_path, class:"btn btn-flat" %>
